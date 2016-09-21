@@ -4,7 +4,7 @@
 1. 应完成工作
  * java面向对象
 2. 已完成工作
- * Soverign的用法
+ 1. Soverign的用法
  * package text;
 
 public class Sovereign {
