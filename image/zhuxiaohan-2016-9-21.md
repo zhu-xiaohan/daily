@@ -4,7 +4,7 @@
 1. 应完成工作
  * java面向对象
 2. 已完成工作
- *Soverign的用法
+ * Soverign的用法
  * package text;
 
 public class Sovereign {
@@ -32,5 +32,5 @@ public class Sovereign {
 4. 未完成原因
 5. 工作成功
  * 第一题
- * ![1](第一题.png)
+ ![1](第一题.png)
 6. 遇到的问题及解决方法
