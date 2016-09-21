@@ -3,8 +3,8 @@
 
 1. 应完成工作
  * java面向对象
-![1](20110518135304a0935.jpg)
 2. 已完成工作
+ *Soverign的用法
  * package text;
 
 public class Sovereign {
@@ -31,4 +31,6 @@ public class Sovereign {
 3. 未完成工作
 4. 未完成原因
 5. 工作成功
+ * 第一题
+ * ![1](第一题.png)
 6. 遇到的问题及解决方法
