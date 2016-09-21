@@ -28,10 +28,11 @@ public class Sovereign {
 	}
 }
 
- * 2.instanceof
+ * (2).instanceof
  ![2](Animal.png)
  ![3](Mammal.png)
  ![4](Dog.png)
+
 3. 未完成工作
 4. 未完成原因
 5. 工作成功
