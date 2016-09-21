@@ -36,6 +36,6 @@ public class Sovereign {
 3. 未完成工作
 4. 未完成原因
 5. 工作成功
- * 第一题
+ * Soverign的用法
  ![1](第一题.png)
 6. 遇到的问题及解决方法
