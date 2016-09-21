@@ -28,7 +28,7 @@ public class Sovereign {
 	}
 }
 
- * instanceof关键字
+ *  instanceof关键字
  ![2](Animal.png)
  ![3](Mammal.png)
  ![4](Dog.png)
