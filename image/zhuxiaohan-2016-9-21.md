@@ -4,8 +4,8 @@
 1. 应完成工作
  * java面向对象
 2. 已完成工作
- 1. Soverign的用法
- * package text;
+   (1).  Soverign的用法
+   * package text;
 
 public class Sovereign {
 	int age;
