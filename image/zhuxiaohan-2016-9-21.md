@@ -4,7 +4,7 @@
 1. 应完成工作
  * java面向对象
 2. 已完成工作
-   * 1.  Soverign的用法
+   *   Soverign的用法
    * package text;
 
 public class Sovereign {
@@ -28,7 +28,7 @@ public class Sovereign {
 	}
 }
 
- * (2).instanceof
+ * instanceof关键字
  ![2](Animal.png)
  ![3](Mammal.png)
  ![4](Dog.png)
