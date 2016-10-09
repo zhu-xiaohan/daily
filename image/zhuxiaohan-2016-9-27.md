@@ -1,4 +1,4 @@
-# 正则表达式
+# 正则表达式  2016-9-27
 ================================
 *  作用：验证字符串是否与指定规则匹配
 *  本质：字符串规则，规则描述
@@ -44,55 +44,7 @@
           }
       }
       
-* 常用正则表达式
-  * 验证手机号
-  * 验证邮箱
-  * 验证身份证号
-  * 验证银行卡号
-  * 验证日期格式
-  * 验证IP地址
-  
- * 关于java中Pattern和Matcher类的其余用法
- 
-  import java.util.regex.Matcher;
-  import java.util.regex.Pattern;
 
-  /**
-   * Created by chenyan on 2016/9/27.
-   */
-  public class Test5 {
-
-      public static void main(String[] args) {
-          // 定义一个正则表达式字符串
-          String expression = "-?\\d{3}";
-
-          // 定义一个需要验证的字符串
-          String str = "-a222222";
-
-          // 套路用法
-          Pattern p = Pattern.compile(expression);
-          Matcher m = p.matcher(str);
-
-          // 请问 str符合 expression的规则吗？
-
-          // 表示str中的字符串必须完全匹配expression
-          boolean bln1 = m.matches();
-
-          // 表示str中从开始位置字符到找到能匹配expression的字符串或者子字符串就可以了
-          boolean bln2 =  m.lookingAt();
-
-          // 表示匹配expression成功一次后，是否还有下一个组字符串与expression匹配
-          boolean bln3 =  m.find();
-
-          // matches()方法返回true的话，那么就表示str负责expression的规则
-          // 反之则不符合
-          System.out.println("bln1="+bln1);
-          System.out.println("bln2="+bln2);
-          System.out.println("bln3="+bln3);
-      }
-      
-  }
-  
  * group()方法的使用
  
    import java.util.regex.Matcher;
@@ -153,51 +105,7 @@
 		 */
 		public class ListDemo {
 
-			public static void main(String[] args) {
-
-				// 创建
-				List<String> list = new ArrayList<String>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				list.add(2,"朱德");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-
-				// 删除
-				// list.remove(0);
-				list.remove("毛泽东");
-
-				// 查询遍历
-				for(int index = 0;index< list.size();index ++) {
-					String name = list.get(index);
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
-
-	
+			
 	* LinkedList 链表
 	
 		* 在集合任何位置（头部、中间、尾部）添加、获取
@@ -206,63 +114,7 @@
 		
 		* LinkedList还额外提供对头部和尾部元素进行添加和删除操作的方法 
 		
-		import java.util.ArrayList;
-		import java.util.Iterator;
-		import java.util.LinkedList;
-		import java.util.List;
-
-		/**
-		 * Created by chenyan on 2016/9/27.
-		 */
-		public class LinkedListDemo {
-
-			public static void main(String[] args) {
-
-
-				// 创建
-				LinkedList<String> list = new LinkedList<>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				list.add(2,"朱德");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-
-				// 删除
-				// list.remove(0);
-				list.remove("毛泽东");
-
-				list.addFirst("陈独秀");
-				list.addLast("华国锋");
-				// 查询遍历
-				for(int index = 0;index< list.size();index ++) {
-					String name = list.get(index);
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
-
+		
 * set
 	
 	* Set接口也是Collection接口的子接口，但是与Collection或List接口不同的是，Set接口中不能加入重复的元素。
@@ -282,104 +134,7 @@
 			里面不能存放重复元素，
 			采用散列的存储方式，所以是没有顺序(插入顺序)的。 
 			
-			
-		import java.util.HashSet;
-		import java.util.Iterator;
-		import java.util.LinkedList;
 
-		/**
-		 * Created by chenyan on 2016/9/27.
-		 */
-		public class HashSetDemo {
-
-			public static void main(String[] args) {
-
-
-				// 创建
-				HashSet<String> list = new HashSet<String>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-				// 删除
-				// list.remove(0);
-				// list.remove("毛泽东");
-
-
-				// 查询遍历
-
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
-		
-		* TreeSet (有序的存放) :
-		
-			输入的数据进行有序排列
-
-			import java.util.Iterator;
-			import java.util.TreeSet;
-
-			/**
-			 * Created by chenyan on 2016/9/27.
-			 */
-			public class TreeSetDemo {
-
-				public static void main(String[] args) {
-
-
-					// 创建
-					TreeSet<String> list = new TreeSet<String>();
-
-					// 添加
-					list.add("b毛泽东");
-
-					list.add("a周恩来");
-
-					list.add("c刘少奇");
-
-					// list.add("林彪");
-
-					//  修改
-					// list.set(0,"林彪");
-
-					// 删除
-					// list.remove(0);
-					// list.remove("毛泽东");
-
-
-					// 查询遍历
-
-					for (String name : list) {
-						System.out.println(name);
-					}
-
-					System.out.println("*******************************");
-					Iterator<String> it = list.iterator();
-					while(it.hasNext()) {
-						String name = it.next();
-						System.out.println(name);
-					}
-				}
-			}
-#集合的使用
 ===============================
 
 * 集合类的结构图和主要用法
@@ -403,129 +158,9 @@
 * 泛型：规范类型
   	
   
-*  list
-
-	* ArrayList  可变数组
-	
-		import java.util.ArrayList;
-		import java.util.Iterator;
-		import java.util.List;
-
-		/**
-		 * Created by chenyan on 2016/9/27.
-		 */
-		public class ListDemo {
-
-			public static void main(String[] args) {
-
-				// 创建
-				List<String> list = new ArrayList<String>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				list.add(2,"朱德");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-
-				// 删除
-				// list.remove(0);
-				list.remove("毛泽东");
-
-				// 查询遍历
-				for(int index = 0;index< list.size();index ++) {
-					String name = list.get(index);
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
 
 	
-	* LinkedList 链表
 	
-		* 在集合任何位置（头部、中间、尾部）添加、获取
-		
-		* 插入、删除操作频繁时，可使用LinkedList来提高效率
-		
-		* LinkedList还额外提供对头部和尾部元素进行添加和删除操作的方法 
-		
-		import java.util.ArrayList;
-		import java.util.Iterator;
-		import java.util.LinkedList;
-		import java.util.List;
-
-		/**
-		 * Created by chenyan on 2016/9/27.
-		 */
-		public class LinkedListDemo {
-
-			public static void main(String[] args) {
-
-
-				// 创建
-				LinkedList<String> list = new LinkedList<>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				list.add(2,"朱德");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-
-				// 删除
-				// list.remove(0);
-				list.remove("毛泽东");
-
-				list.addFirst("陈独秀");
-				list.addLast("华国锋");
-				// 查询遍历
-				for(int index = 0;index< list.size();index ++) {
-					String name = list.get(index);
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
-
 * set
 	
 	* Set接口也是Collection接口的子接口，但是与Collection或List接口不同的是，Set接口中不能加入重复的元素。
@@ -545,105 +180,7 @@
 			里面不能存放重复元素，
 			采用散列的存储方式，所以是没有顺序(插入顺序)的。 
 			
-			
-		import java.util.HashSet;
-		import java.util.Iterator;
-		import java.util.LinkedList;
-
-		/**
-		 * Created by chenyan on 2016/9/27.
-		 */
-		public class HashSetDemo {
-
-			public static void main(String[] args) {
-
-
-				// 创建
-				HashSet<String> list = new HashSet<String>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-				// 删除
-				// list.remove(0);
-				// list.remove("毛泽东");
-
-
-				// 查询遍历
-
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
 		
-		* TreeSet (有序的存放) :
-		
-			输入的数据进行有序排列
-
-			import java.util.Iterator;
-			import java.util.TreeSet;
-
-			/**
-			 * Created by chenyan on 2016/9/27.
-			 */
-			public class TreeSetDemo {
-
-				public static void main(String[] args) {
-
-
-					// 创建
-					TreeSet<String> list = new TreeSet<String>();
-
-					// 添加
-					list.add("b毛泽东");
-
-					list.add("a周恩来");
-
-					list.add("c刘少奇");
-
-					// list.add("林彪");
-
-					//  修改
-					// list.set(0,"林彪");
-
-					// 删除
-					// list.remove(0);
-					// list.remove("毛泽东");
-
-
-					// 查询遍历
-
-					for (String name : list) {
-						System.out.println(name);
-					}
-
-					System.out.println("*******************************");
-					Iterator<String> it = list.iterator();
-					while(it.hasNext()) {
-						String name = it.next();
-						System.out.println(name);
-					}
-				}
-			}
-
-
 
 	#集合的使用
 ===============================
@@ -668,63 +205,6 @@
 	
 * 泛型：规范类型
   	
-  
-*  list
-
-	* ArrayList  可变数组
-	
-		import java.util.ArrayList;
-		import java.util.Iterator;
-		import java.util.List;
-
-		/**
-		 * Created by chenyan on 2016/9/27.
-		 */
-		public class ListDemo {
-
-			public static void main(String[] args) {
-
-				// 创建
-				List<String> list = new ArrayList<String>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				list.add(2,"朱德");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-
-				// 删除
-				// list.remove(0);
-				list.remove("毛泽东");
-
-				// 查询遍历
-				for(int index = 0;index< list.size();index ++) {
-					String name = list.get(index);
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
 
 	
 	* LinkedList 链表
@@ -734,63 +214,7 @@
 		* 插入、删除操作频繁时，可使用LinkedList来提高效率
 		
 		* LinkedList还额外提供对头部和尾部元素进行添加和删除操作的方法 
-		
-		import java.util.ArrayList;
-		import java.util.Iterator;
-		import java.util.LinkedList;
-		import java.util.List;
-
-		/**
-		 * Created by chenyan on 2016/9/27.
-		 */
-		public class LinkedListDemo {
-
-			public static void main(String[] args) {
-
-
-				// 创建
-				LinkedList<String> list = new LinkedList<>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				list.add(2,"朱德");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-
-				// 删除
-				// list.remove(0);
-				list.remove("毛泽东");
-
-				list.addFirst("陈独秀");
-				list.addLast("华国锋");
-				// 查询遍历
-				for(int index = 0;index< list.size();index ++) {
-					String name = list.get(index);
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
+	
 
 * set
 	
@@ -811,106 +235,8 @@
 			里面不能存放重复元素，
 			采用散列的存储方式，所以是没有顺序(插入顺序)的。 
 			
-			
-		import java.util.HashSet;
-		import java.util.Iterator;
-		import java.util.LinkedList;
-
-		/**
-		 * Created by chenyan on 2016/9/27.
-		 */
-		public class HashSetDemo {
-
-			public static void main(String[] args) {
-
-
-				// 创建
-				HashSet<String> list = new HashSet<String>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-				// 删除
-				// list.remove(0);
-				// list.remove("毛泽东");
-
-
-				// 查询遍历
-
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
 		
-		* TreeSet (有序的存放) :
 		
-			输入的数据进行有序排列
-
-			import java.util.Iterator;
-			import java.util.TreeSet;
-
-			/**
-			 * Created by chenyan on 2016/9/27.
-			 */
-			public class TreeSetDemo {
-
-				public static void main(String[] args) {
-
-
-					// 创建
-					TreeSet<String> list = new TreeSet<String>();
-
-					// 添加
-					list.add("b毛泽东");
-
-					list.add("a周恩来");
-
-					list.add("c刘少奇");
-
-					// list.add("林彪");
-
-					//  修改
-					// list.set(0,"林彪");
-
-					// 删除
-					// list.remove(0);
-					// list.remove("毛泽东");
-
-
-					// 查询遍历
-
-					for (String name : list) {
-						System.out.println(name);
-					}
-
-					System.out.println("*******************************");
-					Iterator<String> it = list.iterator();
-					while(it.hasNext()) {
-						String name = it.next();
-						System.out.println(name);
-					}
-				}
-			}
-
-
-
 
 
 
@@ -938,63 +264,6 @@
 	
 * 泛型：规范类型
   	
-  
-*  list
-
-	* ArrayList  可变数组
-	
-		import java.util.ArrayList;
-		import java.util.Iterator;
-		import java.util.List;
-
-		/**
-		 * Created by chenyan on 2016/9/27.
-		 */
-		public class ListDemo {
-
-			public static void main(String[] args) {
-
-				// 创建
-				List<String> list = new ArrayList<String>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				list.add(2,"朱德");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-
-				// 删除
-				// list.remove(0);
-				list.remove("毛泽东");
-
-				// 查询遍历
-				for(int index = 0;index< list.size();index ++) {
-					String name = list.get(index);
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
 
 	
 	* LinkedList 链表
@@ -1005,63 +274,6 @@
 		
 		* LinkedList还额外提供对头部和尾部元素进行添加和删除操作的方法 
 		
-		import java.util.ArrayList;
-		import java.util.Iterator;
-		import java.util.LinkedList;
-		import java.util.List;
-
-		/**
-		 * Created by chenyan on 2016/9/27.
-		 */
-		public class LinkedListDemo {
-
-			public static void main(String[] args) {
-
-
-				// 创建
-				LinkedList<String> list = new LinkedList<>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				list.add(2,"朱德");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-
-				// 删除
-				// list.remove(0);
-				list.remove("毛泽东");
-
-				list.addFirst("陈独秀");
-				list.addLast("华国锋");
-				// 查询遍历
-				for(int index = 0;index< list.size();index ++) {
-					String name = list.get(index);
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
-
 * set
 	
 	* Set接口也是Collection接口的子接口，但是与Collection或List接口不同的是，Set接口中不能加入重复的元素。
@@ -1081,105 +293,7 @@
 			里面不能存放重复元素，
 			采用散列的存储方式，所以是没有顺序(插入顺序)的。 
 			
-			
-		import java.util.HashSet;
-		import java.util.Iterator;
-		import java.util.LinkedList;
-
-		/**
-		 * Created by chenyan on 2016/9/27.
-		 */
-		public class HashSetDemo {
-
-			public static void main(String[] args) {
-
-
-				// 创建
-				HashSet<String> list = new HashSet<String>();
-
-				// 添加
-				list.add("毛泽东");
-
-				list.add("周恩来");
-
-				list.add("刘少奇");
-
-				// list.add("林彪");
-
-				//  修改
-				// list.set(0,"林彪");
-
-				// 删除
-				// list.remove(0);
-				// list.remove("毛泽东");
-
-
-				// 查询遍历
-
-				for (String name : list) {
-					System.out.println(name);
-				}
-
-				System.out.println("*******************************");
-				Iterator<String> it = list.iterator();
-				while(it.hasNext()) {
-					String name = it.next();
-					System.out.println(name);
-				}
-			}
-		}
 		
-		* TreeSet (有序的存放) :
-		
-			输入的数据进行有序排列
-
-			import java.util.Iterator;
-			import java.util.TreeSet;
-
-			/**
-			 * Created by chenyan on 2016/9/27.
-			 */
-			public class TreeSetDemo {
-
-				public static void main(String[] args) {
-
-
-					// 创建
-					TreeSet<String> list = new TreeSet<String>();
-
-					// 添加
-					list.add("b毛泽东");
-
-					list.add("a周恩来");
-
-					list.add("c刘少奇");
-
-					// list.add("林彪");
-
-					//  修改
-					// list.set(0,"林彪");
-
-					// 删除
-					// list.remove(0);
-					// list.remove("毛泽东");
-
-
-					// 查询遍历
-
-					for (String name : list) {
-						System.out.println(name);
-					}
-
-					System.out.println("*******************************");
-					Iterator<String> it = list.iterator();
-					while(it.hasNext()) {
-						String name = it.next();
-						System.out.println(name);
-					}
-				}
-			}
-
-
 
 	
 
